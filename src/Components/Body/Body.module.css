@@ -1,0 +1,15 @@
+.outterContainer{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    background: url('../../Assets/ford.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.innerContainer{
+    width: 60%;
+    height: 85vh;
+    /* background-color: darkgreen; */
+}

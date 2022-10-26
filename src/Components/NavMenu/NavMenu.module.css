@@ -1,0 +1,21 @@
+.outterContainer{
+    width: 100%;
+    height: 5vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.listUl{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    width: 50%;
+}
+
+.listUl>li{
+    display: inline;
+    margin: 2%;
+}

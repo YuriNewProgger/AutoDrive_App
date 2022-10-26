@@ -1,0 +1,26 @@
+.outterContainerDisc{
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.commonContiner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 10% 0;
+}
+
+.commonContiner>div>h2{
+    margin: 5% 0;
+}
+
+.commonContiner>div>table{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 3%;
+    background-color: white;
+}
