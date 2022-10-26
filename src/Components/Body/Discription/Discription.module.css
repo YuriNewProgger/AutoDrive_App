@@ -24,3 +24,18 @@
     padding: 3%;
     background-color: white;
 }
+
+.frogetPass{
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-size: 0.9em;
+}
+
+.frogetPass:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+.frogetPass:active{
+    transform: scale(0.98, 0.98);
+}

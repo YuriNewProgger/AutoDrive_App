@@ -1,12 +1,21 @@
-import React from "react";
-import ford from '../../../Assets/ford.jpg';
-import dodge from '../../../Assets/dodge.jpg';
-import porche from '../../../Assets/porche.jpg';
+import React, { useState } from "react";
 import s from './Discription.module.css';
 import { Button } from '@mantine/core';
+import { log } from "console";
 
 
 const Discription = () => {
+    const [login, setLogin] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+
+    function handleLogin(e:React.FormEvent<HTMLInputElement>): void{
+        setLogin(e.currentTarget.value);
+    }
+
+    function handlePassword(e: React.FormEvent<HTMLInputElement>){
+        setPassword(e.currentTarget.value);
+    }
+
     return(
         <div className={s.outterContainerDisc}>
             <h1>Прокат автомобилей</h1>
@@ -23,11 +32,11 @@ const Discription = () => {
                     <table className={s.tableForm}>
                         <tr>
                             <td>Логин</td>
-                            <td><input type="text" /></td>
+                            <td><input type="text" onChange={handleLogin}/></td>
                         </tr>
                         <tr>
                             <td>Пароль</td>
-                            <td><input type="text" /></td>
+                            <td><input type="text" onChange={handlePassword}/></td>
                         </tr>
                         <tr>
                             <td><input type="checkbox" /></td>
@@ -38,7 +47,7 @@ const Discription = () => {
                         <tr>
                             <td></td>
                             <td>
-                                <a href="#">Забыл пароль</a>
+                                <button className={s.frogetPass}>Забыл пароль</button>
                             </td>
                         </tr>
                         <tr>
