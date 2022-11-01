@@ -28,38 +28,6 @@ const Discription = () => {
                     <h2>+ Акции</h2>
                     <h2>+ Круглосуточная поддержка</h2>
                 </div>
-                <div>
-                    <table className={s.tableForm}>
-                        <tr>
-                            <td>Логин</td>
-                            <td><input type="text" onChange={handleLogin}/></td>
-                        </tr>
-                        <tr>
-                            <td>Пароль</td>
-                            <td><input type="text" onChange={handlePassword}/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" /></td>
-                            <td>
-                                Запомнить меня
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <button className={s.frogetPass}>Забыл пароль</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Button>Войти</Button>
-                            </td>
-                            <td>
-                                <Button>Зарегестрироваться</Button>                                
-                            </td>
-                        </tr>
-                    </table>
-                </div>
             </div>
         </div>
     );

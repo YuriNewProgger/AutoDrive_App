@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import s from './Header.module.css';
 import logo from '../../Assets/logo.png';
-import { Button } from '@mantine/core';
+import { Button, Modal } from '@mantine/core';
+import { SignIn } from "./SignIn/SignIn";
 
 type headerProp = {
     logoTitle: string
@@ -10,9 +11,12 @@ type headerProp = {
 const Header = ({ logoTitle }: headerProp) => {
 
     const [name, setName] = useState<string | null>('Empty');
+    const [surname, setSurName] = useState<string | null>('Empty');
+    const [isShowSignWin, setIsShowSignWin] = useState<boolean>(false);
 
     React.useEffect(() => {
         setName(localStorage.getItem('name'));
+        setSurName(localStorage.getItem('surname'));
     }, []);
 
     return(
@@ -22,8 +26,15 @@ const Header = ({ logoTitle }: headerProp) => {
                 <span>{logoTitle}</span>
             </div>
             <div className={s.signOutterBlock}>
-                {name === null ? <Button color="indigo">Не авторизован</Button> : <a href="#">{name}</a>}
-            </div>
+                {name === null ? <Button color="indigo" onClick={() => setIsShowSignWin(true)}>Войти</Button> : <span>{name} {surname}</span>}
+            </div>   
+            <Modal
+                opened={isShowSignWin}
+                onClose={() => setIsShowSignWin(false)}
+                title="">
+                {/* Modal content */}
+                <SignIn/>
+            </Modal>         
         </div>
     );
 }

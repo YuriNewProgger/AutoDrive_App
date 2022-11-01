@@ -1,0 +1,18 @@
+.btnSign{
+    margin-top: 10px;
+}
+
+.outterContainerBtn{
+    display: flex;
+    justify-content: center;
+}
+
+.btnRegistr{
+    margin-left: 0;
+    background-color: transparent;
+    color: #4c6ef5;
+}
+
+.btnRegistr:hover{
+    background-color: transparent;
+}
