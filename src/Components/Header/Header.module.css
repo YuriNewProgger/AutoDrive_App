@@ -24,3 +24,10 @@
     align-items: center;
     margin: 0 20px;
 }
+
+.privateRoom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
