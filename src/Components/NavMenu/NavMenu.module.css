@@ -19,3 +19,8 @@
     display: inline;
     margin: 2%;
 }
+
+.listUl>li>a{
+    color: white;
+    text-decoration: none;
+}

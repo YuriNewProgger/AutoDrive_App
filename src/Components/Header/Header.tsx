@@ -12,16 +12,14 @@ type headerProp = {
     logoTitle: string
 }
 
+
+
 const Header = ({ logoTitle }: headerProp) => {
-    const user : UserType = useSelector<RootState, UserType>((state) => state._signReducer.user);
+    //const user : UserType = useSelector<RootState, UserType>((state) => state._signReducer.user);
 
     const [currentUser, setCurrentUser] = useState<UserType | null>(null);
     const [isShowSignWin, setIsShowSignWin] = useState<boolean>(false);
 
-    const closeSignWin = () => {
-        setIsShowSignWin(false);
-        user === null ? setCurrentUser(null) : setCurrentUser(user);
-    }
 
     React.useEffect(() => {
         setCurrentUser(null);
@@ -37,16 +35,16 @@ const Header = ({ logoTitle }: headerProp) => {
                 {currentUser === null ? 
                     <Button color="indigo" onClick={() => setIsShowSignWin(true)}>Войти</Button> : 
                     <div className={s.privateRoom}>
-                        <Avatar variant="filled" radius="xl" src={null} color="indigo"/>
+                        <Avatar variant="filled" radius="xl" src={null} color="indigo">TT</Avatar>
                         <p>{currentUser.name} {currentUser.surname}</p>
                     </div>
                 }
             </div>   
             <Modal
                 opened={isShowSignWin}
-                onClose={() => closeSignWin()}
+                onClose={() => setIsShowSignWin(false)}
                 title="">
-                <SignIn/>
+                <SignIn SetIsShowSignWin={setIsShowSignWin} SetCurrentUser={setCurrentUser}/>
             </Modal>         
         </div>
     );

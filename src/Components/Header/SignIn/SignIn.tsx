@@ -7,7 +7,12 @@ import { AuthTypes } from "../../../Utils/DataTypes/AuthData";
 import { DoPostFetch } from "../../../Utils/QueryHandlers/FetchToServer";
 import s from './SignIn.module.css';
 
-export const SignIn = () => {
+type IMyProps = {
+    SetIsShowSignWin:Function,
+    SetCurrentUser: Function
+}
+
+export const SignIn = (props:IMyProps) => {
     const dispatch = useDispatch();
 
     const [login, setLogin] = useState<string | null>('');
@@ -20,6 +25,8 @@ export const SignIn = () => {
             console.log("Request is success");
             //localStorage.setItem('userData', JSON.stringify(data));
             dispatch(signUserAction(data));
+            props.SetCurrentUser(data);
+            props.SetIsShowSignWin(false);
         }
     }
 
